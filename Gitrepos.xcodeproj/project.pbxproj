@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */; };
 		2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58620E25BAF44C00AEF183 /* AppDelegate.swift */; };
 		2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58621025BAF44C00AEF183 /* SceneDelegate.swift */; };
 		2A58621325BAF44C00AEF183 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58621225BAF44C00AEF183 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 		2A58623125BAF44D00AEF183 /* GitreposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58623025BAF44D00AEF183 /* GitreposUITests.swift */; };
 		2A58624325BAF5F300AEF183 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58624225BAF5F300AEF183 /* User.swift */; };
 		2A58624B25BAF60900AEF183 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58624A25BAF60900AEF183 /* Repository.swift */; };
+		2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C4D125BC379100F0A936 /* Decoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTypes.swift; sourceTree = "<group>"; };
 		2A58620B25BAF44C00AEF183 /* Gitrepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitrepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A58620E25BAF44C00AEF183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A58621025BAF44C00AEF183 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		2A58623225BAF44D00AEF183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A58624225BAF5F300AEF183 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2A58624A25BAF60900AEF183 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		2AB9C4D125BC379100F0A936 /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,7 @@
 		2A58620D25BAF44C00AEF183 /* Gitrepos */ = {
 			isa = PBXGroup;
 			children = (
-				2A58624125BAF5E500AEF183 /* Model */,
+				2A58624125BAF5E500AEF183 /* Model types */,
 				2A58620E25BAF44C00AEF183 /* AppDelegate.swift */,
 				2A58621025BAF44C00AEF183 /* SceneDelegate.swift */,
 				2A58621225BAF44C00AEF183 /* ViewController.swift */,
@@ -133,13 +137,15 @@
 			path = GitreposUITests;
 			sourceTree = "<group>";
 		};
-		2A58624125BAF5E500AEF183 /* Model */ = {
+		2A58624125BAF5E500AEF183 /* Model types */ = {
 			isa = PBXGroup;
 			children = (
 				2A58624225BAF5F300AEF183 /* User.swift */,
 				2A58624A25BAF60900AEF183 /* Repository.swift */,
+				2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */,
+				2AB9C4D125BC379100F0A936 /* Decoding.swift */,
 			);
-			path = Model;
+			path = "Model types";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +212,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1210;
+				ORGANIZATIONNAME = "Swift En Profundidad";
 				TargetAttributes = {
 					2A58620A25BAF44C00AEF183 = {
 						CreatedOnToolsVersion = 12.1;
@@ -277,6 +284,8 @@
 				2A58624B25BAF60900AEF183 /* Repository.swift in Sources */,
 				2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */,
 				2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */,
+				2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */,
+				2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
