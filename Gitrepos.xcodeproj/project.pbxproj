@@ -14,6 +14,9 @@
 		2A03916C25BCF44B00152649 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03916B25BCF44B00152649 /* UserTests.swift */; };
 		2A03917A25BD0C9F00152649 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03917925BD0C9F00152649 /* Helpers.swift */; };
 		2A03917F25BD0EE600152649 /* RepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03917E25BD0EE600152649 /* RepositoryTest.swift */; };
+		2A273DDF25BDD9B4003FE8DD /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */; };
+		2A273DE625BDDAA3003FE8DD /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DE525BDDAA3003FE8DD /* CachingController.swift */; };
+		2A273DF325BDE3EC003FE8DD /* FileSystemCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */; };
 		2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */; };
 		2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58620E25BAF44C00AEF183 /* AppDelegate.swift */; };
 		2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58621025BAF44C00AEF183 /* SceneDelegate.swift */; };
@@ -53,6 +56,9 @@
 		2A03916B25BCF44B00152649 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		2A03917925BD0C9F00152649 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2A03917E25BD0EE600152649 /* RepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTest.swift; sourceTree = "<group>"; };
+		2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		2A273DE525BDDAA3003FE8DD /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
+		2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileSystemCacheController.swift; path = ../../../../../../../FileSystemCacheController.swift; sourceTree = "<group>"; };
 		2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTypes.swift; sourceTree = "<group>"; };
 		2A58620B25BAF44C00AEF183 /* Gitrepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitrepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A58620E25BAF44C00AEF183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,90 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		2A273DC325BDD757003FE8DD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2A58621925BAF44D00AEF183 /* LaunchScreen.storyboard */,
+				2A58621425BAF44C00AEF183 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2A273DC425BDD76D003FE8DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A273DD925BDD7E9003FE8DD /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2A273DC525BDD777003FE8DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A58621C25BAF44D00AEF183 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A273DC625BDD797003FE8DD /* View Cotrollers */ = {
+			isa = PBXGroup;
+			children = (
+				2A58621225BAF44C00AEF183 /* ViewController.swift */,
+			);
+			path = "View Cotrollers";
+			sourceTree = "<group>";
+		};
+		2A273DD925BDD7E9003FE8DD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2A58621725BAF44C00AEF183 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2A273DDA25BDD7FD003FE8DD /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2A58620E25BAF44C00AEF183 /* AppDelegate.swift */,
+				2A58621025BAF44C00AEF183 /* SceneDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		2A273DE325BDDA1D003FE8DD /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A273DF125BDE3D9003FE8DD /* Persistence */,
+				2A273DE425BDDA90003FE8DD /* Caching */,
+				2A273DED25BDE3CC003FE8DD /* Network */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		2A273DE425BDDA90003FE8DD /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				2A273DE525BDDAA3003FE8DD /* CachingController.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		2A273DED25BDE3CC003FE8DD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2A273DF125BDE3D9003FE8DD /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		2A58620225BAF44C00AEF183 = {
 			isa = PBXGroup;
 			children = (
@@ -132,14 +222,13 @@
 		2A58620D25BAF44C00AEF183 /* Gitrepos */ = {
 			isa = PBXGroup;
 			children = (
-				2A58620E25BAF44C00AEF183 /* AppDelegate.swift */,
-				2A58621725BAF44C00AEF183 /* Assets.xcassets */,
-				2A58621C25BAF44D00AEF183 /* Info.plist */,
-				2A58621925BAF44D00AEF183 /* LaunchScreen.storyboard */,
-				2A58621425BAF44C00AEF183 /* Main.storyboard */,
+				2A273DDA25BDD7FD003FE8DD /* Application Delegate */,
+				2A273DE325BDDA1D003FE8DD /* Model Controllers */,
 				2A58624125BAF5E500AEF183 /* Model types */,
-				2A58621025BAF44C00AEF183 /* SceneDelegate.swift */,
-				2A58621225BAF44C00AEF183 /* ViewController.swift */,
+				2A273DC425BDD76D003FE8DD /* Resources */,
+				2A273DC325BDD757003FE8DD /* Storyboards */,
+				2A273DC525BDD777003FE8DD /* Supporting Files */,
+				2A273DC625BDD797003FE8DD /* View Cotrollers */,
 			);
 			path = Gitrepos;
 			sourceTree = "<group>";
@@ -311,13 +400,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A273DDF25BDD9B4003FE8DD /* NetworkController.swift in Sources */,
 				2A58624325BAF5F300AEF183 /* User.swift in Sources */,
 				2A58621325BAF44C00AEF183 /* ViewController.swift in Sources */,
 				2A58624B25BAF60900AEF183 /* Repository.swift in Sources */,
 				2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */,
 				2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */,
 				2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */,
+				2A273DE625BDDAA3003FE8DD /* CachingController.swift in Sources */,
 				2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */,
+				2A273DF325BDE3EC003FE8DD /* FileSystemCacheController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
