@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A03914A25BCEBF100152649 /* FetchableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03914925BCEBF100152649 /* FetchableValueTests.swift */; };
+		2A03915925BCF0FA00152649 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A03915625BCF0F900152649 /* User.json */; };
+		2A03915A25BCF0FA00152649 /* PartialUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A03915725BCF0F900152649 /* PartialUser.json */; };
+		2A03915B25BCF0FA00152649 /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A03915825BCF0FA00152649 /* Repository.json */; };
+		2A03916C25BCF44B00152649 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03916B25BCF44B00152649 /* UserTests.swift */; };
+		2A03917A25BD0C9F00152649 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03917925BD0C9F00152649 /* Helpers.swift */; };
+		2A03917F25BD0EE600152649 /* RepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03917E25BD0EE600152649 /* RepositoryTest.swift */; };
 		2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */; };
 		2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58620E25BAF44C00AEF183 /* AppDelegate.swift */; };
 		2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58621025BAF44C00AEF183 /* SceneDelegate.swift */; };
@@ -14,7 +21,7 @@
 		2A58621625BAF44C00AEF183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A58621425BAF44C00AEF183 /* Main.storyboard */; };
 		2A58621825BAF44C00AEF183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A58621725BAF44C00AEF183 /* Assets.xcassets */; };
 		2A58621B25BAF44D00AEF183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A58621925BAF44D00AEF183 /* LaunchScreen.storyboard */; };
-		2A58622625BAF44D00AEF183 /* GitreposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58622525BAF44D00AEF183 /* GitreposTests.swift */; };
+		2A58622625BAF44D00AEF183 /* cd ...swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58622525BAF44D00AEF183 /* cd ...swift */; };
 		2A58623125BAF44D00AEF183 /* GitreposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58623025BAF44D00AEF183 /* GitreposUITests.swift */; };
 		2A58624325BAF5F300AEF183 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58624225BAF5F300AEF183 /* User.swift */; };
 		2A58624B25BAF60900AEF183 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58624A25BAF60900AEF183 /* Repository.swift */; };
@@ -39,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A03914925BCEBF100152649 /* FetchableValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableValueTests.swift; sourceTree = "<group>"; };
+		2A03915625BCF0F900152649 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		2A03915725BCF0F900152649 /* PartialUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PartialUser.json; sourceTree = "<group>"; };
+		2A03915825BCF0FA00152649 /* Repository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
+		2A03916B25BCF44B00152649 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		2A03917925BD0C9F00152649 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		2A03917E25BD0EE600152649 /* RepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTest.swift; sourceTree = "<group>"; };
 		2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTypes.swift; sourceTree = "<group>"; };
 		2A58620B25BAF44C00AEF183 /* Gitrepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitrepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A58620E25BAF44C00AEF183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +63,7 @@
 		2A58621A25BAF44D00AEF183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A58621C25BAF44D00AEF183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A58622125BAF44D00AEF183 /* GitreposTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitreposTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A58622525BAF44D00AEF183 /* GitreposTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitreposTests.swift; sourceTree = "<group>"; };
+		2A58622525BAF44D00AEF183 /* cd ...swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "cd ...swift"; sourceTree = "<group>"; };
 		2A58622725BAF44D00AEF183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A58622C25BAF44D00AEF183 /* GitreposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitreposUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A58623025BAF44D00AEF183 /* GitreposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitreposUITests.swift; sourceTree = "<group>"; };
@@ -84,6 +98,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A03915525BCF0E900152649 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2A03915725BCF0F900152649 /* PartialUser.json */,
+				2A03915825BCF0FA00152649 /* Repository.json */,
+				2A03915625BCF0F900152649 /* User.json */,
+				2A03917E25BD0EE600152649 /* RepositoryTest.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		2A58620225BAF44C00AEF183 = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +132,14 @@
 		2A58620D25BAF44C00AEF183 /* Gitrepos */ = {
 			isa = PBXGroup;
 			children = (
-				2A58624125BAF5E500AEF183 /* Model types */,
 				2A58620E25BAF44C00AEF183 /* AppDelegate.swift */,
+				2A58621725BAF44C00AEF183 /* Assets.xcassets */,
+				2A58621C25BAF44D00AEF183 /* Info.plist */,
+				2A58621925BAF44D00AEF183 /* LaunchScreen.storyboard */,
+				2A58621425BAF44C00AEF183 /* Main.storyboard */,
+				2A58624125BAF5E500AEF183 /* Model types */,
 				2A58621025BAF44C00AEF183 /* SceneDelegate.swift */,
 				2A58621225BAF44C00AEF183 /* ViewController.swift */,
-				2A58621425BAF44C00AEF183 /* Main.storyboard */,
-				2A58621725BAF44C00AEF183 /* Assets.xcassets */,
-				2A58621925BAF44D00AEF183 /* LaunchScreen.storyboard */,
-				2A58621C25BAF44D00AEF183 /* Info.plist */,
 			);
 			path = Gitrepos;
 			sourceTree = "<group>";
@@ -122,7 +147,11 @@
 		2A58622425BAF44D00AEF183 /* GitreposTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A58622525BAF44D00AEF183 /* GitreposTests.swift */,
+				2A03914925BCEBF100152649 /* FetchableValueTests.swift */,
+				2A58622525BAF44D00AEF183 /* cd ...swift */,
+				2A03915525BCF0E900152649 /* Mocks */,
+				2A03916B25BCF44B00152649 /* UserTests.swift */,
+				2A03917925BD0C9F00152649 /* Helpers.swift */,
 				2A58622725BAF44D00AEF183 /* Info.plist */,
 			);
 			path = GitreposTests;
@@ -262,6 +291,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A03915A25BCF0FA00152649 /* PartialUser.json in Resources */,
+				2A03915B25BCF0FA00152649 /* Repository.json in Resources */,
+				2A03915925BCF0FA00152649 /* User.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A58622625BAF44D00AEF183 /* GitreposTests.swift in Sources */,
+				2A03916C25BCF44B00152649 /* UserTests.swift in Sources */,
+				2A03914A25BCEBF100152649 /* FetchableValueTests.swift in Sources */,
+				2A58622625BAF44D00AEF183 /* cd ...swift in Sources */,
+				2A03917F25BD0EE600152649 /* RepositoryTest.swift in Sources */,
+				2A03917A25BD0C9F00152649 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
