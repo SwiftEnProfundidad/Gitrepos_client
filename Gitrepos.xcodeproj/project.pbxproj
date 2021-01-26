@@ -15,6 +15,8 @@
 		2A03917A25BD0C9F00152649 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03917925BD0C9F00152649 /* Helpers.swift */; };
 		2A03917F25BD0EE600152649 /* RepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03917E25BD0EE600152649 /* RepositoryTest.swift */; };
 		2A0F064325C0486B00D47A0F /* FileSystemCacheControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F064225C0486B00D47A0F /* FileSystemCacheControllerTests.swift */; };
+		2A0F065425C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F065325C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift */; };
+		2A0F072525C087F100D47A0F /* CachingControllerCackingPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F072425C087F100D47A0F /* CachingControllerCackingPolicyTests.swift */; };
 		2A273DDF25BDD9B4003FE8DD /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */; };
 		2A273DE625BDDAA3003FE8DD /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DE525BDDAA3003FE8DD /* CachingController.swift */; };
 		2A273DF325BDE3EC003FE8DD /* FileSystemCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */; };
@@ -58,6 +60,8 @@
 		2A03917925BD0C9F00152649 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2A03917E25BD0EE600152649 /* RepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTest.swift; sourceTree = "<group>"; };
 		2A0F064225C0486B00D47A0F /* FileSystemCacheControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheControllerTests.swift; sourceTree = "<group>"; };
+		2A0F065325C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheControllerGitHubDirectoryTests.swift; sourceTree = "<group>"; };
+		2A0F072425C087F100D47A0F /* CachingControllerCackingPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingControllerCackingPolicyTests.swift; sourceTree = "<group>"; };
 		2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2A273DE525BDDAA3003FE8DD /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
 		2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileSystemCacheController.swift; path = ../../../../../../../FileSystemCacheController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				2A0F064225C0486B00D47A0F /* FileSystemCacheControllerTests.swift */,
+				2A0F065325C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift */,
+				2A0F072425C087F100D47A0F /* CachingControllerCackingPolicyTests.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -439,6 +445,8 @@
 				2A03916C25BCF44B00152649 /* UserTests.swift in Sources */,
 				2A03914A25BCEBF100152649 /* FetchableValueTests.swift in Sources */,
 				2A58622625BAF44D00AEF183 /* URLTests.swift in Sources */,
+				2A0F072525C087F100D47A0F /* CachingControllerCackingPolicyTests.swift in Sources */,
+				2A0F065425C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift in Sources */,
 				2A03917F25BD0EE600152649 /* RepositoryTest.swift in Sources */,
 				2A03917A25BD0C9F00152649 /* Helpers.swift in Sources */,
 				2A0F064325C0486B00D47A0F /* FileSystemCacheControllerTests.swift in Sources */,
@@ -611,7 +619,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VS4VP3L839;
-				INFOPLIST_FILE = Gitrepos/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gitrepos/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,7 +638,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VS4VP3L839;
-				INFOPLIST_FILE = Gitrepos/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Gitrepos/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

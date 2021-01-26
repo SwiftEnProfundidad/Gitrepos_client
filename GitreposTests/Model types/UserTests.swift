@@ -41,11 +41,11 @@ private extension UserTests {
     func verifyStandardFields(in user: User, file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(user.login, "octocat")
         XCTAssertEqual(user.id.value, 1)
-        verify(url: "https://github.com/images/error/octocat_happy.gif", in: user.avatar)
-        verify(url: "https://api.github.com/users/octocat/repos", in: user.repositories)
-        verify(url: "https://api.github.com/users/octocat/starred", in: user.stars)
-        verify(url: "https://api.github.com/users/octocat/followers", in: user.followers)
-        verify(url: "https://api.github.com/users/octocat/following", in: user.following)
+        verify(url: "https://github.com/images/error/octocat_happy.gif", in: user.avatar, file: file, line: line)
+        verify(url: "https://api.github.com/users/octocat/repos", in: user.repositories, file: file, line: line)
+        verify(url: "https://api.github.com/users/octocat/starred", in: user.stars, file: file, line: line)
+        verify(url: "https://api.github.com/users/octocat/followers", in: user.followers, file: file, line: line)
+        verify(url: "https://api.github.com/users/octocat/following", in: user.following, file: file, line: line)
     }
 }
 
