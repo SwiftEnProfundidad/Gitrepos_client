@@ -19,8 +19,11 @@
 		2A0F072525C087F100D47A0F /* CachingControllerCackingPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F072425C087F100D47A0F /* CachingControllerCackingPolicyTests.swift */; };
 		2A273DDF25BDD9B4003FE8DD /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */; };
 		2A273DE625BDDAA3003FE8DD /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DE525BDDAA3003FE8DD /* CachingController.swift */; };
-		2A273DF325BDE3EC003FE8DD /* FileSystemCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */; };
 		2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */; };
+		2A58435B25C1CDDF006EA2E8 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58435A25C1CDDF006EA2E8 /* UINavigationBar.swift */; };
+		2A58436325C1CF5F006EA2E8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58436225C1CF5F006EA2E8 /* UIColor.swift */; };
+		2A58436825C1D03D006EA2E8 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58436725C1D03D006EA2E8 /* UITabBar.swift */; };
+		2A58437B25C1D215006EA2E8 /* FileSystemCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58437A25C1D215006EA2E8 /* FileSystemCacheController.swift */; };
 		2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58620E25BAF44C00AEF183 /* AppDelegate.swift */; };
 		2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58621025BAF44C00AEF183 /* SceneDelegate.swift */; };
 		2A58621325BAF44C00AEF183 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58621225BAF44C00AEF183 /* ViewController.swift */; };
@@ -64,8 +67,11 @@
 		2A0F072425C087F100D47A0F /* CachingControllerCackingPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingControllerCackingPolicyTests.swift; sourceTree = "<group>"; };
 		2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2A273DE525BDDAA3003FE8DD /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
-		2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileSystemCacheController.swift; path = ../../../../../../../FileSystemCacheController.swift; sourceTree = "<group>"; };
 		2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTypes.swift; sourceTree = "<group>"; };
+		2A58435A25C1CDDF006EA2E8 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		2A58436225C1CF5F006EA2E8 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		2A58436725C1D03D006EA2E8 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
+		2A58437A25C1D215006EA2E8 /* FileSystemCacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheController.swift; sourceTree = "<group>"; };
 		2A58620B25BAF44C00AEF183 /* Gitrepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitrepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A58620E25BAF44C00AEF183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A58621025BAF44C00AEF183 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,20 +197,11 @@
 			path = "Application Delegate";
 			sourceTree = "<group>";
 		};
-		2A273DE325BDDA1D003FE8DD /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				2A273DF125BDE3D9003FE8DD /* Persistence */,
-				2A273DE425BDDA90003FE8DD /* Caching */,
-				2A273DED25BDE3CC003FE8DD /* Network */,
-			);
-			path = "Model Controllers";
-			sourceTree = "<group>";
-		};
 		2A273DE425BDDA90003FE8DD /* Caching */ = {
 			isa = PBXGroup;
 			children = (
 				2A273DE525BDDAA3003FE8DD /* CachingController.swift */,
+				2A58437A25C1D215006EA2E8 /* FileSystemCacheController.swift */,
 			);
 			path = Caching;
 			sourceTree = "<group>";
@@ -217,12 +214,24 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		2A273DF125BDE3D9003FE8DD /* Persistence */ = {
+		2A58435925C1CDC4006EA2E8 /* Protocols and extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2A273DF225BDE3EC003FE8DD /* FileSystemCacheController.swift */,
+				2A58435A25C1CDDF006EA2E8 /* UINavigationBar.swift */,
+				2A58436225C1CF5F006EA2E8 /* UIColor.swift */,
+				2A58436725C1D03D006EA2E8 /* UITabBar.swift */,
 			);
-			path = Persistence;
+			path = "Protocols and extensions";
+			sourceTree = "<group>";
+		};
+		2A58436C25C1D10C006EA2E8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2A273DE425BDDA90003FE8DD /* Caching */,
+				2A58624125BAF5E500AEF183 /* Model types */,
+				2A273DED25BDE3CC003FE8DD /* Network */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		2A58620225BAF44C00AEF183 = {
@@ -249,8 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				2A273DDA25BDD7FD003FE8DD /* Application Delegate */,
-				2A273DE325BDDA1D003FE8DD /* Model Controllers */,
-				2A58624125BAF5E500AEF183 /* Model types */,
+				2A58436C25C1D10C006EA2E8 /* Core */,
+				2A58435925C1CDC4006EA2E8 /* Protocols and extensions */,
 				2A273DC425BDD76D003FE8DD /* Resources */,
 				2A273DC325BDD757003FE8DD /* Storyboards */,
 				2A273DC525BDD777003FE8DD /* Supporting Files */,
@@ -425,16 +434,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A58436825C1D03D006EA2E8 /* UITabBar.swift in Sources */,
 				2A273DDF25BDD9B4003FE8DD /* NetworkController.swift in Sources */,
+				2A58436325C1CF5F006EA2E8 /* UIColor.swift in Sources */,
 				2A58624325BAF5F300AEF183 /* User.swift in Sources */,
 				2A58621325BAF44C00AEF183 /* ViewController.swift in Sources */,
 				2A58624B25BAF60900AEF183 /* Repository.swift in Sources */,
 				2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */,
 				2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */,
 				2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */,
+				2A58437B25C1D215006EA2E8 /* FileSystemCacheController.swift in Sources */,
 				2A273DE625BDDAA3003FE8DD /* CachingController.swift in Sources */,
 				2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */,
-				2A273DF325BDE3EC003FE8DD /* FileSystemCacheController.swift in Sources */,
+				2A58435B25C1CDDF006EA2E8 /* UINavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
