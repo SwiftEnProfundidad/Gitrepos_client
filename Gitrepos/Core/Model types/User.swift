@@ -6,8 +6,8 @@
 //  Copyright © 2021 Swift En Profundidad. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
 struct User {
     let login: String
@@ -17,7 +17,7 @@ struct User {
     var stars: FetchableValue<[Repository]>
     var followers: FetchableValue<[User]>
     var following: FetchableValue<[User]>
-    var isFollowed: FetchableValue<Bool> = FetchableValue(url: URL(string: "hhtp://test.com")!, value: .fetched(value: false))
+    var isFollowed: FetchableValue<Bool> = FetchableValue(url: URL(string: "http://test.com")!, value: .fetched(value: false))
     var details: FetchableValue<Details>
 }
 
@@ -84,6 +84,22 @@ extension User.Details {
         case followersCount = "followers"
         case followingCount = "following"
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        publicRepositoriesCount = try container.value(forKey: .publicRepositoriesCount)
+        followersCount = try container.value(forKey: .followersCount)
+        followingCount = try container.value(forKey: .followingCount)
+        name = try container.value(forKey: .name)
+        company = try container.value(forKey: .company)
+        location = try container.value(forKey: .location)
+        email = try container.value(forKey: .email)
+        bio = try container.value(forKey: .bio)
+        let blog: String = try container.value(forKey: .blog)
+        self.blog = blog.isEmpty ? nil : URL(string: blog)
+    }
+    
 }
+
 
 
