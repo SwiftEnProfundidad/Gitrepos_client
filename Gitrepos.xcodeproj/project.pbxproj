@@ -17,6 +17,9 @@
 		2A0F064325C0486B00D47A0F /* FileSystemCacheControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F064225C0486B00D47A0F /* FileSystemCacheControllerTests.swift */; };
 		2A0F065425C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F065325C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift */; };
 		2A0F072525C087F100D47A0F /* CachingControllerCackingPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F072425C087F100D47A0F /* CachingControllerCackingPolicyTests.swift */; };
+		2A20334F25C2F9C700DB8C08 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20334E25C2F9C700DB8C08 /* DateTests.swift */; };
+		2A20335425C2FABD00DB8C08 /* RepositoryCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20335325C2FABD00DB8C08 /* RepositoryCellTests.swift */; };
+		2A20335C25C3048C00DB8C08 /* ArrayDataSourceOrganizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20335B25C3048C00DB8C08 /* ArrayDataSourceOrganizerTests.swift */; };
 		2A273DDF25BDD9B4003FE8DD /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */; };
 		2A273DE625BDDAA3003FE8DD /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A273DE525BDDAA3003FE8DD /* CachingController.swift */; };
 		2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */; };
@@ -41,6 +44,11 @@
 		2A58623125BAF44D00AEF183 /* GitreposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58623025BAF44D00AEF183 /* GitreposUITests.swift */; };
 		2A58624325BAF5F300AEF183 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58624225BAF5F300AEF183 /* User.swift */; };
 		2A58624B25BAF60900AEF183 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58624A25BAF60900AEF183 /* Repository.swift */; };
+		2AB82F3925C2BA2C003E16EF /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB82F3825C2BA2C003E16EF /* RepositoryCell.swift */; };
+		2AB82F4125C2BCE0003E16EF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB82F4025C2BCE0003E16EF /* Date.swift */; };
+		2AB82F4625C2C392003E16EF /* ArrayTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB82F4525C2C392003E16EF /* ArrayTableViewDataSource.swift */; };
+		2AB82F4E25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB82F4D25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift */; };
+		2AB82F5525C2DDA2003E16EF /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB82F5425C2DDA2003E16EF /* RepositoriesViewController.swift */; };
 		2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C4D125BC379100F0A936 /* Decoding.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +80,9 @@
 		2A0F064225C0486B00D47A0F /* FileSystemCacheControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheControllerTests.swift; sourceTree = "<group>"; };
 		2A0F065325C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemCacheControllerGitHubDirectoryTests.swift; sourceTree = "<group>"; };
 		2A0F072425C087F100D47A0F /* CachingControllerCackingPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingControllerCackingPolicyTests.swift; sourceTree = "<group>"; };
+		2A20334E25C2F9C700DB8C08 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
+		2A20335325C2FABD00DB8C08 /* RepositoryCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellTests.swift; sourceTree = "<group>"; };
+		2A20335B25C3048C00DB8C08 /* ArrayDataSourceOrganizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceOrganizerTests.swift; sourceTree = "<group>"; };
 		2A273DDE25BDD9B4003FE8DD /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2A273DE525BDDAA3003FE8DD /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
 		2A4E44AD25BBC9A7009BB297 /* ModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTypes.swift; sourceTree = "<group>"; };
@@ -102,6 +113,11 @@
 		2A58623225BAF44D00AEF183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A58624225BAF5F300AEF183 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2A58624A25BAF60900AEF183 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		2AB82F3825C2BA2C003E16EF /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		2AB82F4025C2BCE0003E16EF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2AB82F4525C2C392003E16EF /* ArrayTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTableViewDataSource.swift; sourceTree = "<group>"; };
+		2AB82F4D25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewDataSource.swift; sourceTree = "<group>"; };
+		2AB82F5425C2DDA2003E16EF /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		2AB9C4D125BC379100F0A936 /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,14 +202,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2A273DC625BDD797003FE8DD /* View Cotrollers */ = {
-			isa = PBXGroup;
-			children = (
-				2A58621225BAF44C00AEF183 /* UsersViewController.swift */,
-			);
-			path = "View Cotrollers";
-			sourceTree = "<group>";
-		};
 		2A273DD925BDD7E9003FE8DD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +244,8 @@
 				2A58436725C1D03D006EA2E8 /* UITabBar.swift */,
 				2A58439625C1EB38006EA2E8 /* UIView.swift */,
 				2A5843AD25C20B1E006EA2E8 /* UITableView.swift */,
+				2AB82F4025C2BCE0003E16EF /* Date.swift */,
+				2AB82F4525C2C392003E16EF /* ArrayTableViewDataSource.swift */,
 			);
 			path = "Protocols and extensions";
 			sourceTree = "<group>";
@@ -253,6 +263,7 @@
 		2A58439B25C1EF1A006EA2E8 /* Screens and navigation flow */ = {
 			isa = PBXGroup;
 			children = (
+				2AB82F3725C2BA1B003E16EF /* Repositories */,
 				2A5843A425C1F844006EA2E8 /* Users */,
 				2A5843BD25C20D7A006EA2E8 /* Loader.swift */,
 			);
@@ -264,6 +275,7 @@
 			children = (
 				2A58439C25C1EF2C006EA2E8 /* UserCell.swift */,
 				2A5843A825C1F85A006EA2E8 /* UsersTableViewDataSource.swift */,
+				2A58621225BAF44C00AEF183 /* UsersViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -308,7 +320,6 @@
 				2A58439B25C1EF1A006EA2E8 /* Screens and navigation flow */,
 				2A273DC325BDD757003FE8DD /* Storyboards */,
 				2A273DC525BDD777003FE8DD /* Supporting Files */,
-				2A273DC625BDD797003FE8DD /* View Cotrollers */,
 			);
 			path = Gitrepos;
 			sourceTree = "<group>";
@@ -316,11 +327,14 @@
 		2A58622425BAF44D00AEF183 /* GitreposTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A20334E25C2F9C700DB8C08 /* DateTests.swift */,
 				2A0F064125C047D300D47A0F /* Model Controllers */,
 				2A0F063A25C0478900D47A0F /* Model types */,
-				2A03915525BCF0E900152649 /* Mocks */,
 				2A03917925BD0C9F00152649 /* Helpers.swift */,
+				2A03915525BCF0E900152649 /* Mocks */,
 				2A58622725BAF44D00AEF183 /* Info.plist */,
+				2A20335325C2FABD00DB8C08 /* RepositoryCellTests.swift */,
+				2A20335B25C3048C00DB8C08 /* ArrayDataSourceOrganizerTests.swift */,
 			);
 			path = GitreposTests;
 			sourceTree = "<group>";
@@ -343,6 +357,16 @@
 				2AB9C4D125BC379100F0A936 /* Decoding.swift */,
 			);
 			path = "Model types";
+			sourceTree = "<group>";
+		};
+		2AB82F3725C2BA1B003E16EF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2AB82F3825C2BA2C003E16EF /* RepositoryCell.swift */,
+				2AB82F4D25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift */,
+				2AB82F5425C2DDA2003E16EF /* RepositoriesViewController.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,12 +516,17 @@
 				2A5843BE25C20D7A006EA2E8 /* Loader.swift in Sources */,
 				2A58439D25C1EF2C006EA2E8 /* UserCell.swift in Sources */,
 				2A5843A925C1F85A006EA2E8 /* UsersTableViewDataSource.swift in Sources */,
+				2AB82F4125C2BCE0003E16EF /* Date.swift in Sources */,
+				2AB82F5525C2DDA2003E16EF /* RepositoriesViewController.swift in Sources */,
+				2AB82F3925C2BA2C003E16EF /* RepositoryCell.swift in Sources */,
 				2A4E44AE25BBC9A7009BB297 /* ModelTypes.swift in Sources */,
 				2A5843AE25C20B1E006EA2E8 /* UITableView.swift in Sources */,
 				2A58437B25C1D215006EA2E8 /* FileSystemCacheController.swift in Sources */,
+				2AB82F4E25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift in Sources */,
 				2A58439725C1EB38006EA2E8 /* UIView.swift in Sources */,
 				2A273DE625BDDAA3003FE8DD /* CachingController.swift in Sources */,
 				2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */,
+				2AB82F4625C2C392003E16EF /* ArrayTableViewDataSource.swift in Sources */,
 				2A58435B25C1CDDF006EA2E8 /* UINavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,9 +539,12 @@
 				2A03914A25BCEBF100152649 /* FetchableValueTests.swift in Sources */,
 				2A58622625BAF44D00AEF183 /* URLTests.swift in Sources */,
 				2A0F072525C087F100D47A0F /* CachingControllerCackingPolicyTests.swift in Sources */,
+				2A20334F25C2F9C700DB8C08 /* DateTests.swift in Sources */,
+				2A20335425C2FABD00DB8C08 /* RepositoryCellTests.swift in Sources */,
 				2A0F065425C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift in Sources */,
 				2A03917F25BD0EE600152649 /* RepositoryTest.swift in Sources */,
 				2A03917A25BD0C9F00152649 /* Helpers.swift in Sources */,
+				2A20335C25C3048C00DB8C08 /* ArrayDataSourceOrganizerTests.swift in Sources */,
 				2A0F064325C0486B00D47A0F /* FileSystemCacheControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

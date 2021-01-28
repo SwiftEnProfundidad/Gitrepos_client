@@ -19,26 +19,36 @@ import UIKit
 
 
 class UsersTableViewDataSource: NSObject {
-    private let dataOrganizer: DataOrganizer
+    internal var dataOrganizer: ArrayDataSourceOrganizer<User>
+    internal var viewModelCache: [IndexPath : UserCell.ViewModel] = [ : ]
     
     init(users: [User]) {
-        dataOrganizer = DataOrganizer(users: users)
+        dataOrganizer = ArrayDataSourceOrganizer(items: users)
         super.init()
     }
+}
+
+// MARK: - ArrayTableViewDataSource
+
+extension UsersTableViewDataSource: ArrayTableViewDataSource {
+    func viewModel(for value: User) -> UserCell.ViewModel {
+        return UserCell.ViewModel(user: value)
+    }
     
+    func configure(cell: UserCell, with viewModel: UserCell.ViewModel) {
+        cell.viewModel = viewModel
+    }
 }
 
 // MARK: UITableViewDataSource
 
 extension UsersTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataOrganizer.rowCounts
+        return rowsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UserCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.viewModel = UserCell.ViewModel(user: dataOrganizer[indexPath])
-        return cell
+        return cell(from: tableView, for: indexPath)
     }
     
 }
