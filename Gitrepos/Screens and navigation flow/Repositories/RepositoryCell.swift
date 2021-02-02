@@ -38,7 +38,6 @@ class RepositoryCell: UITableViewCell {
 }
 
 // MARK: - ViewModel
-
 extension RepositoryCell {
     struct ViewModel {
         var name = ""

@@ -13,8 +13,8 @@ class RepositoriesViewController: UIViewController {
     @IBOutlet private weak var repositoryTableView: UITableView!
 }
 
-// MARK: - UIViewController
-extension RepositoriesViewController  {
+// MARK: UIViewController
+extension RepositoriesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let repositories: [Repository] = Loader.loadDataFromJSONFile(withName: "Repositories") else {

@@ -10,7 +10,7 @@ import UIKit
 
 class RepositoriesTableViewDataSource: NSObject {
     let dataOrganizer: ArrayDataSourceOrganizer<Repository>
-    var viewModelCache: [IndexPath: RepositoryCell.ViewModel] = [ : ]
+    var viewModelCache: [IndexPath: RepositoryCell.ViewModel] = [:]
     
     init(repositories: [Repository]) {
         dataOrganizer = ArrayDataSourceOrganizer(items: repositories)
@@ -18,7 +18,7 @@ class RepositoriesTableViewDataSource: NSObject {
     }
 }
 
-// MARK: - ArrayTableViewDataSource
+// MARK: ArrayTableViewDataSource
 extension RepositoriesTableViewDataSource: ArrayTableViewDataSource {
     func viewModel(for value: Repository) -> RepositoryCell.ViewModel {
         return RepositoryCell.ViewModel(repository: value)
@@ -29,7 +29,7 @@ extension RepositoriesTableViewDataSource: ArrayTableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: UITableViewDataSource
 extension RepositoriesTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rowsCount
@@ -48,10 +48,10 @@ extension RepositoryCell.ViewModel {
         description = repository.description ?? ""
         language = repository.language ?? ""
         starsCount = repository.stargazersCount
+        forksCount = repository.forksCount
         avatar = #imageLiteral(resourceName: "Avatar")
         date = repository.updateDate
     }
 }
-
 
 

@@ -9,11 +9,11 @@
 import UIKit
 
 @IBDesignable
-class DesignableImageView: UIImageView { }
+class DesignableImageView: UIImageView {}
 
 extension UIView {
     @IBInspectable
-    var conerRadius: CGFloat {
+    var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -32,7 +32,6 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
-    
     
     @IBInspectable
     var borderColor: UIColor? {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ArrayTableViewDataSource: class {
+protocol ArrayTableViewDataSource: AnyObject {
     associatedtype ModelType
     associatedtype ViewModel
     associatedtype Cell: UITableViewCell
@@ -17,8 +17,6 @@ protocol ArrayTableViewDataSource: class {
     func viewModel(for value: ModelType) -> ViewModel
     func configure(cell: Cell, with viewModel: ViewModel)
 }
-
-// MARK: - Protocol Extension
 
 extension ArrayTableViewDataSource {
     var rowsCount: Int {
@@ -33,16 +31,16 @@ extension ArrayTableViewDataSource {
             } else {
                 let value = dataOrganizer[indexPath]
                 viewModel = self.viewModel(for: value)
+                viewModelCache[indexPath] = viewModel
             }
             return viewModel
         }
+        
         let cell: Cell = tableView.dequeueReusableCell(for: indexPath)
-        configure(cell: cell, with: extractViewModel(at: indexPath) )
+        configure(cell: cell, with: extractViewModel(at: indexPath))
         return cell
     }
 }
-
-// MARK: - ArrayDataSourceOrganizer
 
 struct ArrayDataSourceOrganizer<ModelType> {
     let items: [ModelType]
@@ -55,4 +53,5 @@ struct ArrayDataSourceOrganizer<ModelType> {
         return items[indexPath.row]
     }
 }
+
 
