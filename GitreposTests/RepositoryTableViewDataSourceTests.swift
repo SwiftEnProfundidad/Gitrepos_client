@@ -7,27 +7,42 @@
 //
 
 import XCTest
+@testable import Gitrepos
 
 class RepositoryTableViewDataSourceTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testRows() {
+        var repository: Repository = openJsonFile(withName: "Repository")!
+        repository.readMe.value = .fetched(value: "Lorem ipsum")
+        let organizer = RepositoryTableViewDataSource.DataOrganizer(repository: repository)
+        XCTAssertEqual(organizer.rowsCount, 7)
+        XCTAssertEqual(organizer.row(at: 0), .name)
+        XCTAssertEqual(organizer.row(at: 1), .parent)
+        XCTAssertEqual(organizer.row(at: 2), .owner)
+        XCTAssertEqual(organizer.row(at: 3), .description)
+        XCTAssertEqual(organizer.row(at: 4), .counters)
+        XCTAssertEqual(organizer.row(at: 5), .date)
+        XCTAssertEqual(organizer.row(at: 6), .readme)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testMissingRows() {
+        let dummy: Repository = openJsonFile(withName: "Repository")!
+        let repository = Repository(
+            id: dummy.id,
+            name: dummy.name,
+            isFork: false,
+            forksCount: 0,
+            stargazersCount: 0,
+            owner: dummy.owner,
+            updateDate: dummy.updateDate,
+            description: "",
+            language: "",
+            parent: nil,
+            readMe: dummy.readMe,
+            isStarred: dummy.isStarred
+        )
+        let organizer = RepositoryTableViewDataSource.DataOrganizer(repository: repository)
+        XCTAssertEqual(organizer.rowsCount, 5)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }

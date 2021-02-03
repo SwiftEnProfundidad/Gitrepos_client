@@ -6,4 +6,14 @@
 //  Copyright © 2021 Swift En Profundidad. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class AvatarCell: UITableViewCell {
+    
+    @IBOutlet private weak var avatarImgView: UIImageView!
+    var avatar = UIImage() {
+        didSet {
+            avatarImgView.image = avatar
+        }
+    }
+}

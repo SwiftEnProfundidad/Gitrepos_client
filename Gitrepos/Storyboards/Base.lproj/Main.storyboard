@@ -736,7 +736,7 @@
         <!--Profile-->
         <scene sceneID="fXD-aF-N9U">
             <objects>
-                <viewController id="Gln-T9-pAL" sceneMemberID="viewController">
+                <viewController id="Gln-T9-pAL" customClass="ProfileViewController" customModule="Gitrepos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aOG-3x-SO1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -744,16 +744,21 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wak-x6-4yJ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="DWe-0F-3jl">
+                                    <rect key="frame" x="0.0" y="411" width="414" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AvatarCell" rowHeight="170" id="E9V-3y-yKg" customClass="AvatarCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AvatarCell" rowHeight="170" id="E9V-3y-yKg" customClass="AvatarCell" customModule="Gitrepos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E9V-3y-yKg" id="imA-ql-wWq">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2L-US-meW">
-                                                    <rect key="frame" x="132" y="0.0" width="150" height="145"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2L-US-meW" customClass="DesignableImageView" customModule="Gitrepos" customModuleProvider="target">
+                                                    <rect key="frame" x="132" y="15" width="150" height="145"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="dVl-CJ-7PV"/>
                                                         <constraint firstAttribute="height" constant="150" id="wut-hA-0AT"/>
@@ -772,13 +777,16 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="W2L-US-meW" firstAttribute="top" secondItem="imA-ql-wWq" secondAttribute="top" id="APd-Pz-Dju"/>
-                                                <constraint firstAttribute="bottom" secondItem="W2L-US-meW" secondAttribute="bottom" constant="25" id="dWJ-oo-3wL"/>
+                                                <constraint firstItem="W2L-US-meW" firstAttribute="top" secondItem="imA-ql-wWq" secondAttribute="top" constant="15" id="APd-Pz-Dju"/>
+                                                <constraint firstAttribute="bottom" secondItem="W2L-US-meW" secondAttribute="bottom" constant="10" id="dWJ-oo-3wL"/>
                                                 <constraint firstItem="W2L-US-meW" firstAttribute="centerX" secondItem="imA-ql-wWq" secondAttribute="centerX" id="eCB-Qs-bJs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImgView" destination="W2L-US-meW" id="MVU-kj-Q3B"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="85" id="67S-1M-5sx" customClass="SummaryCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" rowHeight="85" id="67S-1M-5sx" customClass="SummaryCell" customModule="Gitrepos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="198" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="67S-1M-5sx" id="v0J-0p-Zx3">
@@ -800,8 +808,12 @@
                                                 <constraint firstItem="FxA-YG-FuJ" firstAttribute="leading" secondItem="v0J-0p-Zx3" secondAttribute="leading" constant="24" id="swL-16-Rgo"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="constraintBottom" destination="e1g-0E-3Jl" id="W07-7I-Eui"/>
+                                            <outlet property="summaryLabel" destination="FxA-YG-FuJ" id="cab-ko-z08"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="50" id="tNE-yC-Scb" customClass="DetailCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="50" id="tNE-yC-Scb" customClass="DetailCell" customModule="Gitrepos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="283" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tNE-yC-Scb" id="8rI-Ub-lB2">
@@ -832,8 +844,12 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z4l-Fh-amC" secondAttribute="trailing" constant="20" symbolic="YES" id="y6v-83-LOU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="Z4l-Fh-amC" id="xns-dT-kL8"/>
+                                            <outlet property="imageViewIcon" destination="hQV-B6-PHC" id="eG2-3R-rdb"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="50" id="edy-3A-Vov" customClass="ListCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="50" id="edy-3A-Vov" customClass="ListCell" customModule="Gitrepos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="333" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="edy-3A-Vov" id="xGY-6k-xwh">
@@ -852,6 +868,17 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                                            <real key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                                            <real key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="11"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -870,6 +897,10 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Gop-MS-SQO" secondAttribute="trailing" constant="39" id="8Ix-VI-uQC"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="labelCount" destination="Gop-MS-SQO" id="ksg-qb-LyG"/>
+                                            <outlet property="labelSection" destination="ixd-Hx-nKm" id="QmY-D7-Q1v"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -886,12 +917,20 @@
                     <navigationItem key="navigationItem" title="Profile" id="Sdh-X7-0RT">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="edit" id="nOc-jz-mrb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileTableView" destination="wak-x6-4yJ" id="aEH-rp-AMH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hd-vl-Y4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1305.7971014492755" y="-152.00892857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Gop-MS-SQO">
+            <size key="intrinsicContentSize" width="31.5" height="20.5"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="jfO-UA-JSY"/>
         <segue reference="vUQ-AV-GBU"/>

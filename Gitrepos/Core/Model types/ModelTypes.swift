@@ -30,6 +30,13 @@ struct FetchableValue<T> {
         case notFeched
         case fetched(value: T)
     }
+    
+    var fetchedValue: T? {
+        if case let .fetched(value) = value {
+            return value
+        }
+        return nil
+    }
 }
 
 extension FetchableValue: Decodable {

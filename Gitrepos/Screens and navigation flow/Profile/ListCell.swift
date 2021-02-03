@@ -6,4 +6,29 @@
 //  Copyright © 2021 Swift En Profundidad. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ListCell: UITableViewCell {
+    @IBOutlet private weak var labelCount: PaddedLabel!
+    @IBOutlet private weak var labelSection: UILabel!
+    
+    var viewModel = ViewModel() {
+        didSet{
+            labelCount.text = viewModel.countText
+            labelSection.text = viewModel.name
+        }
+    }
+}
+
+// MARK: - ViewModel
+
+extension ListCell {
+    struct ViewModel {
+        var count = 0
+        var name = ""
+        
+        var countText: String {
+            return "\(count)"
+        }
+    }
+}

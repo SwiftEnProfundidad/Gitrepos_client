@@ -9,7 +9,7 @@
 import UIKit
 
 class RepositoriesTableViewDataSource: NSObject {
-    let dataOrganizer: ArrayDataSourceOrganizer<Repository>
+    let    dataOrganizer: ArrayDataSourceOrganizer<Repository>
     var viewModelCache: [IndexPath: RepositoryCell.ViewModel] = [:]
     
     init(repositories: [Repository]) {
