@@ -8,7 +8,13 @@
 
 import UIKit
 
-class BioInputCell: UITableViewCell, UITextViewDelegate {
+protocol BioInputCellDelegate: ScrollingDelegate {
+    func bioCell(_ cell: BioInputCell, didChange text: String)
+}
+
+class BioInputCell: UITableViewCell {
+    weak var delegate: BioInputCellDelegate?
+
     @IBOutlet private weak var textView: UITextView! {
         didSet {
             textView.textContainerInset = UIEdgeInsets.zero
@@ -21,5 +27,29 @@ class BioInputCell: UITableViewCell, UITextViewDelegate {
         didSet {
             textView.text = bioText
         }
+    }
+}
+
+// MARK: UITextViewDelegate
+
+extension BioInputCell: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        delegate?.bioCell(self, didChange: textView.text)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        delegate?.activeViewDidChange(textView)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        delegate?.activeViewDidChange(nil)
+    }
+}
+
+// MARK: CursorShowing
+
+extension BioInputCell: CursorShowing {
+    func showCursor() {
+        textView.becomeFirstResponder()
     }
 }
