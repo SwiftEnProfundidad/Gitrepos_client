@@ -8,13 +8,23 @@
 
 import UIKit
 
+protocol AvatarInputCellDelegate: AnyObject {
+    func photoCellDidEditPhoto(_ cell: AvatarInputCell)
+}
+
+
 class AvatarInputCell: UITableViewCell {
     @IBOutlet private weak var imageViewAvatar: UIImageView!
-    
+    weak var delegate: AvatarInputCellDelegate?
+
     var avatar = UIImage() {
         didSet {
             imageViewAvatar.image = avatar
         }
+    }
+    
+    @IBAction func avatarChange(_ sender: Any) {
+        delegate?.photoCellDidEditPhoto(self)
     }
 }
 

@@ -80,6 +80,8 @@
 		2AB82F4E25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB82F4D25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift */; };
 		2AB82F5525C2DDA2003E16EF /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB82F5425C2DDA2003E16EF /* RepositoriesViewController.swift */; };
 		2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C4D125BC379100F0A936 /* Decoding.swift */; };
+		2ACDF1CE25D5417F00F1D7BD /* TableViewScrollingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDF1CD25D5417F00F1D7BD /* TableViewScrollingController.swift */; };
+		2ACDF1EE25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDF1ED25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +181,8 @@
 		2AB82F4D25C2D9F0003E16EF /* RepositoriesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewDataSource.swift; sourceTree = "<group>"; };
 		2AB82F5425C2DDA2003E16EF /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		2AB9C4D125BC379100F0A936 /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
+		2ACDF1CD25D5417F00F1D7BD /* TableViewScrollingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewScrollingController.swift; sourceTree = "<group>"; };
+		2ACDF1ED25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,15 +401,16 @@
 			isa = PBXGroup;
 			children = (
 				2A20334E25C2F9C700DB8C08 /* DateTests.swift */,
+				2A03917925BD0C9F00152649 /* Helpers.swift */,
 				2A0F064125C047D300D47A0F /* Model Controllers */,
 				2A0F063A25C0478900D47A0F /* Model types */,
-				2A03917925BD0C9F00152649 /* Helpers.swift */,
 				2A03915525BCF0E900152649 /* Mocks */,
 				2A58622725BAF44D00AEF183 /* Info.plist */,
 				2A20335325C2FABD00DB8C08 /* RepositoryCellTests.swift */,
 				2A20335B25C3048C00DB8C08 /* ArrayDataSourceOrganizerTests.swift */,
 				2AB7B09625CB3DD70037A834 /* RepositoryTableViewDataSourceTests.swift */,
 				2AB7B09E25CB3F930037A834 /* ProfileTableViewDataSourceTests.swift */,
+				2ACDF1ED25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift */,
 			);
 			path = GitreposTests;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				2A98147F25CCA885009C042A /* EditProfileViewController.swift */,
 				2A98148425CCAED6009C042A /* User+EditProfileViewController.Row.swift */,
 				2A98148925CCB13E009C042A /* EditProfileTableViewDataSource.swift */,
+				2ACDF1CD25D5417F00F1D7BD /* TableViewScrollingController.swift */,
 			);
 			path = "Edit Profile";
 			sourceTree = "<group>";
@@ -628,6 +634,7 @@
 				2A63C18225C3DEFB001BC2BA /* ParentCell.swift in Sources */,
 				2A66493B25C9F491005D5F9C /* DetailCell.swift in Sources */,
 				2A273DDF25BDD9B4003FE8DD /* NetworkController.swift in Sources */,
+				2ACDF1CE25D5417F00F1D7BD /* TableViewScrollingController.swift in Sources */,
 				2A63C17825C35FD8001BC2BA /* ReadmeCell.swift in Sources */,
 				2A58436325C1CF5F006EA2E8 /* UIColor.swift in Sources */,
 				2A63C17D25C36225001BC2BA /* RepositoryViewController.swift in Sources */,
@@ -685,6 +692,7 @@
 				2A20334F25C2F9C700DB8C08 /* DateTests.swift in Sources */,
 				2A20335425C2FABD00DB8C08 /* RepositoryCellTests.swift in Sources */,
 				2A0F065425C04D0A00D47A0F /* FileSystemCacheControllerGitHubDirectoryTests.swift in Sources */,
+				2ACDF1EE25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift in Sources */,
 				2A03917F25BD0EE600152649 /* RepositoryTest.swift in Sources */,
 				2AB7B09725CB3DD70037A834 /* RepositoryTableViewDataSourceTests.swift in Sources */,
 				2A03917A25BD0C9F00152649 /* Helpers.swift in Sources */,

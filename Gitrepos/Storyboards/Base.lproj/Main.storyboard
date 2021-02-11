@@ -331,13 +331,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EaO-G6-sed">
                                                     <rect key="frame" x="104" y="40.5" width="286" height="47.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gary Lewis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-km-1yf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gary Lewis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-km-1yf">
                                                             <rect key="frame" x="0.0" y="0.0" width="286" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" name="Medium Carmine"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJE-of-oRH">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="gary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJE-of-oRH">
                                                             <rect key="frame" x="0.0" y="28" width="286" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" name="Dusty Grey"/>
@@ -929,7 +929,7 @@
             </objects>
             <point key="canvasLocation" x="1305.7971014492755" y="-152.00892857142856"/>
         </scene>
-        <!--Title-->
+        <!--Edit Profile-->
         <scene sceneID="hYa-5P-biM">
             <objects>
                 <viewController id="dDz-rO-z2C" customClass="EditProfileViewController" customModule="Gitrepos" customModuleProvider="target" sceneMemberID="viewController">
@@ -990,6 +990,9 @@
                                                             <real key="value" value="16"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="avatarChange:" destination="0tl-8t-Qdd" eventType="touchUpInside" id="pJu-pl-OiO"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1024,6 +1027,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="278" height="26"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                            <connections>
+                                                                <action selector="changedText:" destination="0Yc-eF-wrR" eventType="editingDidEnd" id="9Z7-IQ-bCM"/>
+                                                            </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-FS-q22">
                                                             <rect key="frame" x="0.0" y="30" width="278" height="12"/>
@@ -1066,6 +1072,9 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uVH-Oz-lw0">
                                                     <rect key="frame" x="24" y="41" width="366" height="103"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="103" id="eKf-w0-Gev"/>
+                                                    </constraints>
                                                     <string key="text">The monkey-rope is found in all whalers; but it was only in the Pequod that the monkey and his holder were ever tied together. This improvement upon the original usage was introduced by no less a man than Stubb</string>
                                                     <color key="textColor" name="Cork"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1092,15 +1101,22 @@
                         <viewLayoutGuide key="safeArea" id="k05-Zs-J2W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Y1x-F6-ilB">
+                    <navigationItem key="navigationItem" title="Edit Profile" id="Y1x-F6-ilB">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0CK-zB-x0K"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Dgn-Eb-wAM"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonSave" destination="Dgn-Eb-wAM" id="8jU-PO-8yL"/>
+                        <outlet property="controllerScrolling" destination="hRf-Ai-dO8" id="FJ3-S6-WM8"/>
                         <outlet property="editProfileTableView" destination="CI3-zd-ebq" id="ylj-jE-e20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVO-YH-ZCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="hRf-Ai-dO8" customClass="TableViewScrollingController" customModule="Gitrepos" customModuleProvider="target">
+                    <connections>
+                        <outlet property="scrollingTableView" destination="CI3-zd-ebq" id="Cxs-CO-pUM"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="3061" y="-152"/>
         </scene>
