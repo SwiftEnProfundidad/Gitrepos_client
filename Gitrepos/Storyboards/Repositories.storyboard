@@ -12,7 +12,7 @@
         <!--Repositories View Controller-->
         <scene sceneID="F9H-a4-7pT">
             <objects>
-                <viewController id="vvR-uW-iVm" customClass="RepositoriesViewController" customModule="Gitrepos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Repositories" id="vvR-uW-iVm" customClass="RepositoriesViewController" customModule="Gitrepos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="okF-0T-sCn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,7 +191,7 @@
         <!--Repository-->
         <scene sceneID="OUQ-Kp-oXj">
             <objects>
-                <viewController id="dao-hs-6P6" customClass="RepositoryViewController" customModule="Gitrepos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Repository" id="dao-hs-6P6" customClass="RepositoryViewController" customModule="Gitrepos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1gu-Fz-MsV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,6 +256,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="parentLabel" destination="E1s-Nx-lNd" id="UH8-0n-f5y"/>
+                                            <segue destination="vBt-Sa-F2L" kind="show" trigger="accessoryAction" id="zcH-xt-vLt"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OwnerCell" rowHeight="128" id="Yow-vK-cag" customClass="OwnerCell" customModule="Gitrepos">
@@ -289,13 +290,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Pib-NO-QK9">
                                                     <rect key="frame" x="104" y="40.5" width="286" height="47.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gary Lewis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVE-QW-edx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gary Lewis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVE-QW-edx">
                                                             <rect key="frame" x="0.0" y="0.0" width="286" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" name="Medium Carmine"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkT-oQ-JjB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="gary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkT-oQ-JjB">
                                                             <rect key="frame" x="0.0" y="28" width="286" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" name="Dusty Grey"/>
@@ -317,6 +318,7 @@
                                             <outlet property="imageViewAvatar" destination="ocs-Zr-i47" id="Gbf-Yg-jgE"/>
                                             <outlet property="labelName" destination="qVE-QW-edx" id="n7O-hF-TlM"/>
                                             <outlet property="labelUsername" destination="hkT-oQ-JjB" id="0vU-Yw-Bgn"/>
+                                            <segue destination="xTS-uI-mS8" kind="show" trigger="accessoryAction" id="aRC-2E-Cv6"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DescriptionCell" rowHeight="67" id="X4K-TI-VqR" customClass="DescriptionCell" customModule="Gitrepos">
@@ -477,6 +479,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJx-9i-JtB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-649.27536231884062" y="1389.5089285714284"/>
+        </scene>
+        <!--Repository-->
+        <scene sceneID="zXi-t0-WE6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Repositories" referencedIdentifier="Repository" id="vBt-Sa-F2L" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmN-YW-WN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23" y="1302"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="gow-bU-SpP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Users" referencedIdentifier="Profile" id="xTS-uI-mS8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n84-za-AEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23" y="1469"/>
         </scene>
     </scenes>
     <resources>
