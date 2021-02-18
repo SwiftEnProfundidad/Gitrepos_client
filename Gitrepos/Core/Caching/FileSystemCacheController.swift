@@ -10,58 +10,80 @@ import Foundation
 
 typealias Bytes = CLongLong
 
+protocol FileManaging {
+    func removeItem(at URL: URL) throws
+    func contentsOfDirectory(at url: URL, includingPropertiesForKeys keys: [URLResourceKey]?, options mask: FileManager.DirectoryEnumerationOptions) throws -> [URL]
+    func createFile(atPath path: String, contents data: Data?, attributes attr: [FileAttributeKey : Any]?) -> Bool
+    func contents(atPath path: String) -> Data?
+    func attributesOfItem(atPath path: String) throws -> [FileAttributeKey : Any]
+}
+
+extension FileManager: FileManaging { }
+
 /// Después de analizar el código en FileSystemCacheController, la conclusión es:
 /// el comportamiento obtiene o almacena información en el sistema de archivo y la
 /// lógica expresa cómo almacenamos o leemos información en el directorio de caché
 class FileSystemCacheController {
-    private let gitHubDirectory = GitHubDirectory(
-        iOSCachesDirectoryURL: FileManager.default
-            .urls(for: .cachesDirectory, in: .userDomainMask)
-            .first!
-    )
+//    private let gitHubDirectory = GitHubDirectory(
+//        iOSCachesDirectoryURL: FileManager.default
+//            .urls(for: .cachesDirectory, in: .userDomainMask)
+//            .first!
+//    )
+    private let gitHubDirectory: GitHubDirectory
+    var fileManager: FileManaging = FileManager.default
+    
+    init(cachesDirectoryURL: URL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!) {
+        gitHubDirectory = GitHubDirectory(iOSCachesDirectoryURL: cachesDirectoryURL)
+    }
+    
+}
+
+// MARK: Caching
+
+extension FileSystemCacheController: Caching {
     
     var cacheSize: Bytes {
-        let size = fileAttributes(for: gitHubDirectory.iOSCachesDirectoryURL)?[.size] as? Int
+        let size = (try? fileManager.attributesOfItem(atPath: gitHubDirectory.baseURL.path))?[.size] as? Int
         return size.map(Bytes.init) ?? 0
     }
     
     var entries: [StoredEntry] {
-        func fetchEntry(for url: URL, with keys: [URLResourceKey]) -> StoredEntry? {
+        func fetchEntry(for url: URL) -> StoredEntry? {
             assert(url.isFileURL, "Stored entries can only be created from file URLs")
-            guard let values = try? url.resourceValues(forKeys: Set(keys)) else {
+            guard let attributes = try? fileManager.attributesOfItem(atPath: url.path) else {
                 return nil
             }
-            return StoredEntry(url: url, values: values)
+            return StoredEntry(url: url, attributes: attributes)
         }
         
-        func contentsOfDirectory(at url: URL, for keys: [URLResourceKey]) -> [URL] {
-            return (try? FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: keys))
-                ?? []
+        func contentsOfDirectory(at url: URL) -> [URL] {
+            return (try? fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: [.creationDateKey, .fileSizeKey], options: [])) ?? []
         }
         
-        let keys: [URLResourceKey] = [.creationDateKey, .fileSizeKey]
-        return contentsOfDirectory(at: gitHubDirectory.baseURL, for: keys)
-            .compactMap { fetchEntry(for: $0, with: keys) }
+        return contentsOfDirectory(at: gitHubDirectory.baseURL)
+            .compactMap { fetchEntry(for: $0) }
     }
     
     func store<T: Encodable>(value: T, for url: URL) {
         gitHubDirectory
             .makeStorableData(value: value, url: url)
-            .map { storableData in try? storableData.data.write(to: storableData.fileURL) }
+            .map { storableData in
+                _ = fileManager.createFile(atPath: storableData.fileURL.path, contents: storableData.data, attributes: nil)
+            }
     }
     
     func fetchValue<T: Decodable>(for url: URL) -> StoredValue<T>? {
         func creationDateForFile(at url: URL) -> Date? {
             assert(url.isFileURL, "The creation date exists only for file URLs")
-            guard let values = try? url.resourceValues(forKeys: Set([.creationDateKey])),
-                  let date = values.creationDate else {
+            guard let attributes = try? fileManager.attributesOfItem(atPath: url.path),
+                  let date = attributes[.creationDate] as? Date else {
                 return nil
             }
             return date
         }
         
         func extractValue<U: Decodable>(for url: URL) -> U? {
-            return (try? Data(contentsOf: url)).flatMap(GitHubDirectory.value(from:))
+            return fileManager.contents(atPath: url.path).flatMap(GitHubDirectory.value(from:))
         }
         
         guard let fileURL = url.fileUrl(withBaseURL: gitHubDirectory.baseURL) else {
@@ -75,9 +97,8 @@ class FileSystemCacheController {
     }
     
     func removeValue(for url: URL) {
-        url.fileUrl(withBaseURL: gitHubDirectory.iOSCachesDirectoryURL)
-            .map { try? FileManager.default.removeItem(at: $0) }
-        
+        url.fileUrl(withBaseURL: gitHubDirectory.baseURL)
+            .map { try? fileManager.removeItem(at: $0) }
     }
 }
 
@@ -130,9 +151,9 @@ extension FileSystemCacheController.GitHubDirectory {
 
 /// Lógica que está dentro de un tipo de valor, estructura `StoryEntrie`, en lugar de una clase
 extension StoredEntry {
-    init?(url: URL, values: URLResourceValues) {
-        guard let date = values.creationDate,
-              let size = values.fileSize else {
+    init?(url: URL, attributes: [FileAttributeKey : Any]) {
+        guard let date = attributes[.creationDate] as? Date,
+              let size = attributes[.size] as? Int else {
             return nil
         }
         self.url = url
