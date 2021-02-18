@@ -12,7 +12,6 @@ import XCTest
 fileprivate typealias Directory = FileSystemCacheController.GitHubDirectory
 
 class FileSystemCacheControllerGitHubDirectoryTests: XCTestCase {
-
     let testPath = "/testPath"
     
     fileprivate var directory: Directory {
@@ -28,7 +27,7 @@ class FileSystemCacheControllerGitHubDirectoryTests: XCTestCase {
         let storableData = directory.makeStorableData(value: CodableStruct.testValue, url: url)
         XCTAssertNotNil(storableData)
     }
-
+    
     func testValueFromData() {
         let data = try! JSONEncoder().encode(CodableStruct.testValue)
         let valueFromData: CodableStruct? = Directory.value(from: data)
@@ -38,11 +37,12 @@ class FileSystemCacheControllerGitHubDirectoryTests: XCTestCase {
     }
 }
 
-private extension FileSystemCacheControllerGitHubDirectoryTests {
-    struct CodableStruct: Codable {
-        let string: String
-        let int: Int
-        
-        static let testValue = CodableStruct(string: "aaa", int: 777)
-    }
+struct CodableStruct: Codable {
+    let string: String
+    let int: Int
+    
+    static let testValue = CodableStruct(string: "aaa", int: 777)
 }
+
+
+
