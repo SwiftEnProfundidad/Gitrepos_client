@@ -8,9 +8,12 @@
 
 import UIKit
 
-class RepositoriesViewController: UIViewController {
+class RepositoriesViewController: UIViewController, Stateful, MainCoordinated {
     private var dataSource: RepositoriesTableViewDataSource?
     @IBOutlet private weak var repositoryTableView: UITableView!
+    
+    var stateController: StateController?
+    weak var mainCoordinator: MainFlowCoordinator?
 }
 
 // MARK: UIViewController
@@ -24,6 +27,10 @@ extension RepositoriesViewController {
         self.dataSource = dataSource
         repositoryTableView.dataSource = dataSource
         repositoryTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
     }
 }
 

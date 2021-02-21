@@ -8,10 +8,15 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, Stateful, MainCoordinated, UsersCoordinated {
     @IBOutlet private weak var profileTableView: UITableView!
     private var dataSource: ProfileTableViewDataSource?
+    var stateController: StateController?
     
+    weak var mainCoordinator: MainFlowCoordinator?
+    weak var usersCoordinator: UsersFlowCoordinator?
+    
+    @IBAction func cancel(_ segue: UIStoryboardSegue) { }
 }
 
 // MARK: UIViewController
@@ -19,16 +24,18 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard var user: User = Loader.loadDataFromJSONFile(withName: "User"),
-              let repositories: [Repository] = Loader.loadDataFromJSONFile(withName: "Repositories") else {
+        guard let user = stateController?.user else {
             return
         }
-        user.stars.value = .fetched(value: repositories)
         let dataSource = ProfileTableViewDataSource(user: user)
         self.dataSource = dataSource
         profileTableView.dataSource = dataSource
         profileTableView.delegate = self
         profileTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
     }
 }
 
@@ -41,6 +48,26 @@ extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = .clear
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dataSource.map { (dataSource) in
+            let row = dataSource.row(at: indexPath)
+            (row as? Section.DetailRow).map { (row) in
+                let details = stateController?.user?.details.fetchedValue
+                switch row {
+                case .email: details?.email.map { usersCoordinator?.profileViewController(self, didSelectEmail: $0) }
+                case .blog: details?.blog.map { mainCoordinator?.viewController(self, didSelectURL: $0) }
+                default: break
+                }
+            }
+            (row as? Section.ListRow).map { (row) in
+                switch row {
+                 case .followers, .following: usersCoordinator?.profileViewControllerDidSelectedUsers(self)
+                 case .repositories, .stars: usersCoordinator?.profileViewControllerDidRepositories(self)
+                }
+            }
+        }
     }
 }
 

@@ -8,14 +8,17 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, Stateful, UsersCoordinated {
+    
     @IBOutlet private weak var editProfileTableView: UITableView!
     @IBOutlet private weak var buttonSave: UIBarButtonItem!
     @IBOutlet private weak var controllerScrolling: TableViewScrollingController!
     
     private var dataSource: EditProfileTableViewDataSource?
     private var keyboardObservers: [NSObjectProtocol] = []
-
+    
+    var stateController: StateController?
+    weak var usersCoordinator: UsersFlowCoordinator?
 }
 
 // MARK: UIViewController
@@ -23,6 +26,7 @@ class EditProfileViewController: UIViewController {
 extension EditProfileViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerForKeyboardNotifications()
         guard let user: User = Loader.loadDataFromJSONFile(withName: "User") else {
             return
         }
@@ -50,14 +54,14 @@ extension EditProfileViewController: UITableViewDelegate {
 // MARK: ScrollingDelegate
 
 extension EditProfileViewController: ScrollingDelegate {
-//    func activeViewDidChange(_ view: UIView?) {
-//        guard let activeView = view else {
-//            controllerScrolling.activeViewFrame = nil
-//            return
-//        }
-//        let frame = activeView.convert(activeView.bounds, to: editProfileTableView)
-//        controllerScrolling.activeViewFrame = frame
-//    }
+    //    func activeViewDidChange(_ view: UIView?) {
+    //        guard let activeView = view else {
+    //            controllerScrolling.activeViewFrame = nil
+    //            return
+    //        }
+    //        let frame = activeView.convert(activeView.bounds, to: editProfileTableView)
+    //        controllerScrolling.activeViewFrame = frame
+    //    }
     
     func activeViewDidChange(_ view: UIView?) {
         let activeRect: CGRect
@@ -82,9 +86,19 @@ extension EditProfileViewController: ScrollingDelegate {
 
 extension EditProfileViewController: AvatarInputCellDelegate {
     func photoCellDidEditPhoto(	_ cell: AvatarInputCell) {
-        show(UIImagePickerController(), sender: nil)
+        usersCoordinator?.viewControllerDidEditPhoto(self)
     }
 }
+
+// MARK: - CoordinatorDelegate
+
+extension EditProfileViewController: UsersCoordinatorDelegate {
+    func coordinatorDidPick(image: UIImage) {
+        dataSource?.set(avatar: image)
+        editProfileTableView.reloadData()
+    }
+}
+
 
 // MARK: DetailInputCellDelegate
 

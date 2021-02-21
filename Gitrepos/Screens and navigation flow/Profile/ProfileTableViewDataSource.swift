@@ -20,6 +20,10 @@ class ProfileTableViewDataSource: NSObject {
     func section(at index: Int) -> ProfileViewController.Section {
         return organizer.section(at: index)
     }
+    
+    func row(at indePath: IndexPath) -> RowType {
+        return organizer.row(at: indePath)
+    }
 }
 
 // MARK: UITableViewDataSource

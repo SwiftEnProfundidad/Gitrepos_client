@@ -16,6 +16,10 @@ class RepositoryTableViewDataSource: NSObject {
         self.repository = repository
         organizer = DataOrganizer(repository: repository)
     }
+    
+    func row(at index: Int) -> RepositoryViewController.Row {
+        return organizer.row(at: index)
+    }
 }
 
 // MARK: UITableViewDataSource

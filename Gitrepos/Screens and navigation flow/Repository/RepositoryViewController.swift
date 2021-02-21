@@ -8,9 +8,12 @@
 
 import UIKit
 
-class RepositoryViewController: UIViewController {
+class RepositoryViewController: UIViewController, Stateful, MainCoordinated {
     @IBOutlet private weak var repositoryTableView: UITableView!
     private var dataSource: RepositoryTableViewDataSource?
+    
+    var stateController: StateController?
+    weak var mainCoordinator: MainFlowCoordinator?
 }
 
 // MARK: UIViewController
@@ -25,6 +28,27 @@ extension RepositoryViewController {
         self.dataSource = dataSource
         repositoryTableView.dataSource = dataSource
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
+    }
+}
+
+// MARK: UITableViewDelegate
+
+extension RepositoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let dataSource = dataSource else {
+            return
+        }
+        switch dataSource.row(at: indexPath.row) {
+            case .readme:
+                if let readmeURL = stateController?.repository?.readMe.url {
+                    mainCoordinator?.viewController(self, didSelectURL: readmeURL)
+                }
+            default: break
+        }
     }
 }
 
