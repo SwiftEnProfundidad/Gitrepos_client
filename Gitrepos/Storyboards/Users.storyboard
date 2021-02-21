@@ -381,9 +381,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mjk-pc-230">
-                                <rect key="frame" x="-1" y="-2" width="414" height="788"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mjk-pc-230">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Wg4-N2-ikX">
                                     <rect key="frame" x="0.0" y="495" width="414" height="24"/>
@@ -391,7 +390,7 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AvatarInputCell" rowHeight="205" id="Pt8-MV-q6V" customClass="AvatarInputCell" customModule="Gitrepos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" reuseIdentifier="AvatarInputCell" rowHeight="205" id="Pt8-MV-q6V" customClass="AvatarInputCell" customModule="Gitrepos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pt8-MV-q6V" id="rnx-Ws-faT">
@@ -417,7 +416,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiR-gr-U2g" customClass="PaddedButton" customModule="Gitrepos" customModuleProvider="target">
-                                                    <rect key="frame" x="168" y="83" width="82" height="27"/>
+                                                    <rect key="frame" x="154" y="81" width="110" height="31"/>
                                                     <color key="backgroundColor" name="Medium Carmine"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <state key="normal" title="Change photo">
@@ -451,7 +450,7 @@
                                             <outlet property="imageViewAvatar" destination="T4M-tq-Jbb" id="Rse-iJ-LJ5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailInputCell" rowHeight="74" id="6zg-cD-Xfb" customClass="DetailInputCell" customModule="Gitrepos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailInputCell" rowHeight="74" id="6zg-cD-Xfb" customClass="DetailInputCell" customModule="Gitrepos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="233" width="414" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6zg-cD-Xfb" id="njm-L4-ySx">
@@ -500,7 +499,7 @@
                                             <outlet property="textField" destination="EtY-52-ap7" id="cVm-Mq-IdO"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BioInputCell" rowHeight="160" id="mHg-Fl-8yK" customClass="BioInputCell" customModule="Gitrepos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="BioInputCell" rowHeight="160" id="mHg-Fl-8yK" customClass="BioInputCell" customModule="Gitrepos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="307" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mHg-Fl-8yK" id="h7q-Pf-Jks">
@@ -514,8 +513,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7aV-QR-zN6">
-                                                    <rect key="frame" x="24" y="41" width="366" height="103"/>
+                                                    <rect key="frame" x="24" y="41" width="366" height="111"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="111" id="cdo-m7-cFL"/>
+                                                    </constraints>
                                                     <string key="text">The monkey-rope is found in all whalers; but it was only in the Pequod that the monkey and his holder were ever tied together. This improvement upon the original usage was introduced by no less a man than Stubb</string>
                                                     <color key="textColor" name="Cork"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -523,8 +525,7 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="7aV-QR-zN6" secondAttribute="bottom" constant="16" id="5hK-Mo-OFv"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CKs-be-1Qr" secondAttribute="trailing" constant="20" symbolic="YES" id="ELg-9L-aa4"/>
+                                                <constraint firstAttribute="bottom" secondItem="7aV-QR-zN6" secondAttribute="bottom" constant="8" id="5hK-Mo-OFv"/>
                                                 <constraint firstItem="CKs-be-1Qr" firstAttribute="leading" secondItem="h7q-Pf-Jks" secondAttribute="leading" constant="24" id="Oes-WR-tHA"/>
                                                 <constraint firstItem="CKs-be-1Qr" firstAttribute="leading" secondItem="7aV-QR-zN6" secondAttribute="leading" id="TdT-Bd-z5X"/>
                                                 <constraint firstItem="7aV-QR-zN6" firstAttribute="top" secondItem="CKs-be-1Qr" secondAttribute="bottom" constant="8" id="Ucf-bS-gvz"/>
@@ -541,9 +542,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qje-A0-Fhk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qje-A0-Fhk" firstAttribute="bottom" secondItem="Mjk-pc-230" secondAttribute="bottom" id="C63-uh-RLP"/>
+                            <constraint firstItem="Mjk-pc-230" firstAttribute="top" secondItem="Qje-A0-Fhk" secondAttribute="top" id="fMb-Oc-Twg"/>
+                            <constraint firstItem="Qje-A0-Fhk" firstAttribute="trailing" secondItem="Mjk-pc-230" secondAttribute="trailing" id="iqV-vR-C9y"/>
+                            <constraint firstItem="Mjk-pc-230" firstAttribute="leading" secondItem="Qje-A0-Fhk" secondAttribute="leading" id="sgX-Ez-Bo0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="79X-8f-QCi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dRD-e8-pL5"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dRD-e8-pL5">
+                            <connections>
+                                <segue destination="R3K-Qv-fEj" kind="unwind" unwindAction="cancel:" id="iT0-aH-I6P"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gqO-Ya-aG0"/>
                     </navigationItem>
                     <connections>
@@ -553,13 +564,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXA-bY-4RC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="R3K-Qv-fEj" userLabel="Exit" sceneMemberID="exit"/>
                 <customObject id="mWF-or-WHe" customClass="TableViewScrollingController" customModule="Gitrepos" customModuleProvider="target">
                     <connections>
                         <outlet property="scrollingTableView" destination="Mjk-pc-230" id="su5-DC-FgL"/>
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="3061" y="-152"/>
+            <point key="canvasLocation" x="3060.8695652173915" y="-152.00892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nnW-fh-gWJ">
@@ -582,10 +594,10 @@
     </scenes>
     <designables>
         <designable name="6d9-yJ-IZV">
-            <size key="intrinsicContentSize" width="15.5" height="14.5"/>
+            <size key="intrinsicContentSize" width="31.5" height="20.5"/>
         </designable>
         <designable name="tiR-gr-U2g">
-            <size key="intrinsicContentSize" width="82" height="27"/>
+            <size key="intrinsicContentSize" width="110" height="31"/>
         </designable>
     </designables>
     <resources>

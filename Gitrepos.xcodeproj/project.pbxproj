@@ -85,6 +85,9 @@
 		2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C4D125BC379100F0A936 /* Decoding.swift */; };
 		2ACDF1CE25D5417F00F1D7BD /* TableViewScrollingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDF1CD25D5417F00F1D7BD /* TableViewScrollingController.swift */; };
 		2ACDF1EE25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDF1ED25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift */; };
+		2AEF2A7725DF0812006EED76 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2A7625DF0812006EED76 /* StateController.swift */; };
+		2AEF2A7D25DF0B5E006EED76 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2A7C25DF0B5E006EED76 /* MainFlowCoordinator.swift */; };
+		2AEF2A8825DFC424006EED76 /* UsersFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEF2A8725DFC424006EED76 /* UsersFlowCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +193,9 @@
 		2AB9C4D125BC379100F0A936 /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
 		2ACDF1CD25D5417F00F1D7BD /* TableViewScrollingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewScrollingController.swift; sourceTree = "<group>"; };
 		2ACDF1ED25D554E400F1D7BD /* EditProfileTableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewDataSourceTests.swift; sourceTree = "<group>"; };
+		2AEF2A7625DF0812006EED76 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		2AEF2A7C25DF0B5E006EED76 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
+		2AEF2A8725DFC424006EED76 /* UsersFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFlowCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +340,7 @@
 				2A273DE425BDDA90003FE8DD /* Caching */,
 				2A58624125BAF5E500AEF183 /* Model types */,
 				2A273DED25BDE3CC003FE8DD /* Network */,
+				2AEF2A7625DF0812006EED76 /* StateController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -341,6 +348,7 @@
 		2A58439B25C1EF1A006EA2E8 /* Screens and navigation flow */ = {
 			isa = PBXGroup;
 			children = (
+				2AEF2A7B25DF0B2F006EED76 /* Coordinators */,
 				2A98146725CC9193009C042A /* Edit Profile */,
 				2A66492325C9EF4C005D5F9C /* Profile */,
 				2A63C15225C35C36001BC2BA /* Repository */,
@@ -500,6 +508,15 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		2AEF2A7B25DF0B2F006EED76 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2AEF2A7C25DF0B5E006EED76 /* MainFlowCoordinator.swift */,
+				2AEF2A8725DFC424006EED76 /* UsersFlowCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -657,6 +674,7 @@
 				2A58621325BAF44C00AEF183 /* UsersViewController.swift in Sources */,
 				2AB7B08325CB38AC0037A834 /* UITableViewCell.swift in Sources */,
 				2A98148525CCAED6009C042A /* User+EditProfileViewController.Row.swift in Sources */,
+				2AEF2A8825DFC424006EED76 /* UsersFlowCoordinator.swift in Sources */,
 				2A58624B25BAF60900AEF183 /* Repository.swift in Sources */,
 				2A58620F25BAF44C00AEF183 /* AppDelegate.swift in Sources */,
 				2A58621125BAF44C00AEF183 /* SceneDelegate.swift in Sources */,
@@ -664,6 +682,7 @@
 				2A66492D25C9F1B7005D5F9C /* ListCell.swift in Sources */,
 				2A5843BE25C20D7A006EA2E8 /* Loader.swift in Sources */,
 				2A63C18A25C3E234001BC2BA /* RepositoryTableViewDataSource.swift in Sources */,
+				2AEF2A7D25DF0B5E006EED76 /* MainFlowCoordinator.swift in Sources */,
 				2A58439D25C1EF2C006EA2E8 /* UserCell.swift in Sources */,
 				2A5843A925C1F85A006EA2E8 /* UsersTableViewDataSource.swift in Sources */,
 				2AB82F4125C2BCE0003E16EF /* Date.swift in Sources */,
@@ -685,6 +704,7 @@
 				2A63C17325C35F37001BC2BA /* DateCell.swift in Sources */,
 				2A66494025C9F67B005D5F9C /* SummaryCell.swift in Sources */,
 				2A98147825CCA51C009C042A /* Paddable.swift in Sources */,
+				2AEF2A7725DF0812006EED76 /* StateController.swift in Sources */,
 				2A66492525C9EF5A005D5F9C /* AvatarCell.swift in Sources */,
 				2A63C15425C35C50001BC2BA /* RepositoryNameCell.swift in Sources */,
 				2AB9C4D225BC379100F0A936 /* Decoding.swift in Sources */,

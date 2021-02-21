@@ -11,7 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let coordinator = MainFlowCoordinator()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,6 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         UINavigationBar.setCustomAppearance()
         UITabBar.setCustomAppearance()
+        if let initialViewController = window?.rootViewController {
+            coordinator.configure(viewController: initialViewController)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

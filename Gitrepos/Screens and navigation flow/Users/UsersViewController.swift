@@ -8,11 +8,12 @@
 
 import UIKit
 
-class UsersViewController: UIViewController {
-   
+class UsersViewController: UIViewController,Stateful, MainCoordinated {
     @IBOutlet private weak var userTableView: UITableView!
     private var dataSource: UsersTableViewDataSource?
-
+    
+    var stateController: StateController?
+    weak var mainCoordinator: MainFlowCoordinator?
 }
 
 // MARK: UserViewController
@@ -28,5 +29,9 @@ extension UsersViewController {
         self.dataSource = dataSource
         userTableView.dataSource = dataSource
         userTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        mainCoordinator?.configure(viewController: segue.destination)
     }
 }
